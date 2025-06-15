@@ -8,7 +8,8 @@ pipeline{
             stage('CompileandRunSonarAnalysis'){
                 steps{
                     withCredentials([string(credentialsId: 'samueltoken', variable: 'samueltoken')]) {
-                        sh 'mvn clean verify sonar:sonar -Dsonar.login=$samueltoken -Dsonar.organization=samuel4 -Dsonar.host.url=https://sonarcloud.io -Dsonar.projectKey=samuel4'
+                        sh 'mvn clean verify sonar:sonar -Dsonar.login=$samueltoken -Dsonar.organization=samuel4 
+                        -Dsonar.host.url=https://sonarcloud.io -Dsonar.projectKey=samuel4'
                         
                     }
                 }
